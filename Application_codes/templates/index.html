@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimodal Sentiment Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <!-- Div for background images -->
+    <div class="background-images"></div>
+
+
+    <div class="navbar">
+        <div>
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+        </div>
+
+        <!-- Marque -->
+        <div class="marquee">
+            <p>Multimodal Sentiment Analysis System for Product Reviews! Check out our latest features and updates.</p>
+        </div>
+
+        <div>
+            <!--<a href="#registration">Registration</a>-->
+            <a href="#services">Services</a>
+            <a href="#contact">Contact Us</a>
+        </div>
+    </div>
+
+    
+
+    <h1>Welcome to Multimodal Sentiment Analysis</h1>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+
+    <!-- Image Grid Section -->
+    <section class="image-grid">
+        <img src="{{ url_for('static', filename='images/Air_Cooler.jpg') }}" alt="Air Cooler" class="analysis-image air-cooler" data-pid="101">
+        <img src="{{ url_for('static', filename='images/Curtains.jpg') }}" alt="Curtains" class="analysis-image curtains" data-pid="102">
+        <img src="{{ url_for('static', filename='images/Dry_Iron.jpg') }}" alt="Dry Iron" class="analysis-image dry-iron" data-pid="103">
+        <img src="{{ url_for('static', filename='images/Mens_Cargo.jpg') }}" alt="Mens Cargo" class="analysis-image mens-cargo" data-pid="104">
+        <img src="{{ url_for('static', filename='images/Mens_TShirts.jpg') }}" alt="Mens T-Shirts" class="analysis-image mens-tshirts" data-pid="105">
+        <img src="{{ url_for('static', filename='images/Google_Smart_Home_Speaker.jpg') }}" alt="Google Smart Home Speaker" class="analysis-image smart-speaker" data-pid="106">
+        <img src="{{ url_for('static', filename='images/Cusions.jpg') }}" alt="Cushions" class="analysis-image cushions" data-pid="107">
+        <img src="{{ url_for('static', filename='images/DSLR_Camera.jpg') }}" alt="DSLR Camera" class="analysis-image dslr-camera" data-pid="108">
+        <img src="{{ url_for('static', filename='images/Dinner_Set_Plates.jpg') }}" alt="Dinner Set Plates" class="analysis-image dinner-set" data-pid="109">
+        <img src="{{ url_for('static', filename='images/Elec_Kettle.jpg') }}" alt="Electric Kettle" class="analysis-image electric-kettle" data-pid="110">
+        <img src="{{ url_for('static', filename='images/Lekme_Kajal.jpg') }}" alt="Lakme Kajal" class="analysis-image kajal" data-pid="111">
+    </section>
+    
+    <!-- Hidden field to store the selected pid -->
+    <input type="hidden" id="selected-pid" name="selected-pid" value="">
+
+    <!-- Review Input Section -->
+    <section id="forms-section" class="hidden">
+        <!-- Text Form -->
+        <form class="form-container text-form" action="{{ url_for('submit_review') }}" method="POST" enctype="multipart/form-data">
+            <h2>Text Review</h2>
+            <textarea id="single-text" name="single-text" rows="4" cols="50" placeholder="Enter your review..."></textarea><br><br>
+
+            <input type="file" accept="csv/*" id="text-upload" name="text-upload"><br><br>
+
+            <input type="hidden" name="pid" id="pid-text"> <!-- Hidden input for Product ID -->
+            
+            <input type="hidden" name="review_type" value="text">
+            
+            <button type="submit">Submit Review</button>
+        </form>
+
+        <!-- Audio Form -->
+        <form class="form-container audio-form" action="{{ url_for('submit_review') }}" method="POST" enctype="multipart/form-data">
+            <h2>Audio Review</h2>
+            <input type="file" accept="audio/*" id="audio-upload" name="audio-upload"><br><br>
+            
+            <button type="button" id="record-audio" >Record Audio</button><br><br>
+            <button type="button" id="stop-audio" disabled>Stop Recording</button><br><br>
+            
+            <audio id="audio-playback" controls></audio>
+            
+            <input type="hidden" name="pid" id="pid-audio"> <!-- Hidden input for Product ID -->
+            
+            <input type="hidden" name="recorded-audio" id="recorded-audio">
+            <input type="hidden" name="review_type" value="audio">
+            
+            <button type="submit">Submit Review</button>
+        </form>
+
+        <!-- Video Form -->
+        <form class="form-container video-form" action="{{ url_for('submit_review') }}" method="POST" enctype="multipart/form-data">
+            <h2>Video Review</h2>
+            <input type="file" accept="video/*" id="video-upload" name="video-upload"><br><br>
+            
+            <button type="button" id="record-video">Record Video</button><br><br>
+            
+            <input type="hidden" name="pid" id="pid-video">
+            
+            <input type="hidden" name="review_type" value="video">
+            
+            <button type="submit">Submit Review</button>
+        </form>
+    </section>
+
+
+    <div class="content">
+        <!-- Services Section -->
+        <h2 id="services">Our Services</h2>
+        <p>Details about services go here.</p>
+        <p>Details about services go here.</p>
+        <p>Details about services go here.</p>
+        <p>Details about services go here.</p>
+        <p>Details about services go here.</p>
+        <p>Details about services go here.</p>
+        <p>Details about services go here.</p>
+        <p>Details about services go here.</p>
+        <p>Details about services go here.</p>
+        <p>Details about services go here.</p>
+
+        <!-- Contact Us Section -->
+        <div class="contact-info" id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: zawarshaikh3@gmail.com, zawarshaikh3@gmail.com, zawarshaikh3@gmail.com</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="www.linkedin.com/in/zawar-shaikh-431074244"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/zzawwarshaikh?igsh=bHFrYWRsZWhrcTZh"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

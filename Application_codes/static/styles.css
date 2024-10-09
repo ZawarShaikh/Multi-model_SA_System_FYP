@@ -1,0 +1,226 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* !----------------- Index.html page --------------------! */
+/* Nav Bar */
+.navbar {
+    background-color: #11b1e2;
+    color: #fff;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border-radius: 8px;
+}
+
+.navbar img {
+    height: 70px;
+    width: 140px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+}
+
+/* Sliding Text Styles */
+.navbar .marquee {
+    flex-grow: 1;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.navbar .marquee p {
+    display: inline-block;
+    font-weight: bold;
+    padding-left: 100%;
+    font-size: 1.0em; /* Adjust the font size here */
+    animation: marquee 25s linear infinite;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
+/* Background Images */
+
+.background-images {
+    background-image: url('images/text1.jpg'), url('images/text2.jpg'), url('images/video.jpg'), url('images/audio_video.jpg');
+    
+    background-position: left, 25%, 50%, 75%;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    background-size: 30% 100%, 40% 100%, 40% 100%, 60% 100%;
+    /*background-blend-mode: overlay, overlay, overlay, overlay;*/
+    
+    position: fixed;
+    opacity: 0.2; /* Adjust transparency */
+    height: 100vh; /* Adjust height */
+    width: 100vw; /* Adjust width */
+    display: flex;
+
+}
+
+.background-images {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    z-index: -1;
+
+    /* Adding 4 background images */
+    background-image: 
+        url('images/text1.jpg'),
+        url('images/text2.jpg'),
+        url('images/audio_video.jpg'),
+        url('images/video.jpg');
+    background-position: 
+        top left,
+        top right,
+        bottom left,
+        bottom right;
+    position: fixed;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+
+
+/* Flash Massages and Image Grid */
+.hidden {
+    display: none;
+}
+
+.flashes {
+    list-style-type: none;
+    padding: 0;
+}
+
+.flashes li {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+}
+
+.flashes .success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.flashes .error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.image-grid img {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+}
+
+.image-grid img:hover {
+    transform: scale(1.1);
+}
+
+
+/* Forms Section */
+/*
+form {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+*/
+
+#forms-section {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px; /* Space between columns */
+    border-top: 1px solid #ccc;
+    width: 50%;
+
+    /* Center the form horizontally */
+    margin: 0 auto;
+}
+
+.form-container {
+    flex: 1;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    background-color: #d4edda;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Content Div */
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+.content h2 {
+    margin: 20px 0;
+}
+
+.content button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.contact-info {
+    margin-top: 50px;
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: #333;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 24px;
+}
+
