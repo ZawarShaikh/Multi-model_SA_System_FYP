@@ -1,4 +1,4 @@
-# Multi-model_SA_System_FYP
+# Multimodal Sentiment Analysis System for Product Reviews
 
 This is a Multimodal Sentiment Analysis web application that allows users to analyze the sentiment of text, audio, and video reviews. The system leverages the power of machine learning, deep learning, nlp, transformer hugging face, librosa to understand the emotions conveyed in multiple types of content (text, speech, and video), providing accurate sentiment classification into positive, neutral, and negative categories.
 
