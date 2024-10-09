@@ -50,6 +50,7 @@ How to Run Locally
 
 
 Future Work
-Admin Panel: Implementing an admin panel for reviewing, managing, and visualizing user reviews and sentiment analysis results.
-Improved Sentiment Models: Enhancing the machine learning models for better accuracy across all modalities.
-Deployment: Deploying the application on a live server (e.g., Heroku, AWS, etc.) for public access.
+Admin Panel: 
+- Implementing an admin panel for reviewing, managing, and visualizing user reviews and sentiment analysis results.
+- Improved Sentiment Models: Enhancing the machine learning models for better accuracy across all modalities.
+- Deployment: Deploying the application on a live server (e.g., Heroku, AWS, etc.) for public access.
