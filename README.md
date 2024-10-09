@@ -3,6 +3,8 @@
 This is a Multimodal Sentiment Analysis web application that allows users to analyze the sentiment of text, audio, and video reviews. The system leverages the power of machine learning to understand the emotions conveyed in multiple types of content (text, speech, and video), providing accurate sentiment classification into positive, neutral, and negative categories.
 
 ![image](https://github.com/user-attachments/assets/06183967-264d-40ca-b331-56c5458ba57a)
+![image](https://github.com/user-attachments/assets/0f88e2df-6fbd-4b5a-b222-d0c8e0d1f473)
+
 
 Features
  - User-Friendly Interface: Easy-to-use web application where users can submit text, audio, and video reviews for sentiment analysis.
